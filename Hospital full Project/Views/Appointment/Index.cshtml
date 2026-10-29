@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Hospital_full_Project.Models.Appointment>
+
+<a asp-action="Create"
+   class="btn btn-success mb-3">
+    Book Appointment
+</a>
+
+<table class="table table-striped table-bordered table-hover">
+
+    <tr>
+        <th>Patient</th>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.Patient?.Name</td>
+
+            <td>@item.Doctor?.Name</td>
+
+            <td>@item.AppointmentDate</td>
+
+            <td>@item.Status</td>
+
+            <td>
+                <a asp-action="Details"
+                   asp-route-id="@item.AppointmentId">
+                    Details
+                </a>
+
+                <a asp-action="Edit"
+                   asp-route-id="@item.AppointmentId">
+                    Edit
+                </a>
+
+                <a asp-action="Delete"
+                   asp-route-id="@item.AppointmentId">
+                    Delete
+                </a>
+            </td>
+
+        </tr>
+    }
+</table>

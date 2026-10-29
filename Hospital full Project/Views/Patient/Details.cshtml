@@ -1,0 +1,18 @@
+﻿@model Hospital_full_Project.Models.Patient;
+
+<h2>Patient Details</h2>
+
+<p>Name : @Model.Name</p>
+<p>Age : @Model.Age</p>
+<p>Gender : @Model.Gender</p>
+<p>Phone : @Model.Phone</p>
+<p>Address : @Model.Address</p>
+
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Back
+    </a>
+
+    <a asp-action="Create" class="btn btn-primary">
+        Continue
+    </a>

@@ -1,0 +1,20 @@
+﻿@model Hospital_full_Project.Models.Appointment
+
+<h2>Delete Appointment</h2>
+
+<p>Are you sure?</p>
+
+<p>Patient : @Model.Patient?.Name</p>
+
+<p>Doctor : @Model.Doctor?.Name</p>
+
+<form asp-action="Delete" method="post">
+
+    <input asp-for="AppointmentId" type="hidden" />
+
+    <button type="submit" class="btn btn-danger">
+        Delete
+    </button>
+    
+
+</form>

@@ -1,0 +1,64 @@
+﻿@model Hospital_full_Project.Models.Appointment
+
+<h2>Book Appointment</h2>
+
+<form asp-action="Create" method="post">
+
+    <div>
+        <label>Patient</label>
+
+        <select asp-for="PatientId">
+
+            @foreach (var patient in ViewBag.Patients)
+            {
+                <option value="@patient.PatientId">
+                    @patient.Name
+                </option>
+            }
+
+        </select>
+    </div>
+
+    <br />
+
+    <div>
+
+        <label>Doctor</label>
+
+        <select asp-for="DoctorId">
+
+            @foreach (var doctor in ViewBag.Doctors)
+            {
+                <option value="@doctor.DoctorId">
+                    @doctor.Name
+                </option>
+            }
+
+        </select>
+
+    </div>
+
+    <br />
+
+    <div>
+        <label>Appointment Date</label>
+
+        <input asp-for="AppointmentDate"
+               type="date" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Status</label>
+
+        <input asp-for="Status" />
+    </div>
+
+    <br />
+
+    <button type="submit" class=" btn btn-success">
+        Book Appointment
+    </button>
+
+</form>
